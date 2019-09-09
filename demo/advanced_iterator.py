@@ -1,9 +1,9 @@
 # 迭代器
 # 可以被next()函数调用并不断返回下一个值的对象称为迭代器：Iterator。
 # 可以使用isinstance()判断一个对象是否是Iterator对象：
-from collections import Iterator
+from collections.abc import Iterator
 
-isinstance((x for x in range(10)), Iterator)  # True
+print(isinstance((x for x in range(10)), Iterator))  # True
 
 isinstance([], Iterator)  # False
 isinstance({}, Iterator)  # False
