@@ -5,7 +5,6 @@
 # g = (x * x for x in range(10))
 # print(g)
 
-
 # 打印生成器
 # 1.使用next(gene)方法，计算出下一个元素的值，直到计算到最后一个元素
 # 但是没有更多的元素时，抛出StopIteration的错误。
