@@ -4,4 +4,34 @@
 def not_empty(s):
     return s and s.strip()
 
-print(list(filter(not_empty, ['A', '', 'B', None, 'C', '  '])))
+
+# print(list(filter(not_empty, ['A', '', 'B', None, 'C', '  '])))
+
+
+# 素数
+def arr_start_2():
+    num = 2
+    while True:
+        yield num
+        num = num + 1
+
+
+def is_primes(prime):
+    return lambda x: x % prime > 0
+
+
+def primes():
+    arr = arr_start_2()  # 初始序列
+    while True:
+        prime = next(arr)
+        yield prime
+        arr = filter(is_primes(prime), arr)
+
+
+primes_arr = []
+for n in primes():
+    if n < 10:
+        primes_arr.append(n)
+    else:
+        break
+print(primes_arr)
