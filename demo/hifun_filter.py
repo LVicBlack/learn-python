@@ -34,4 +34,30 @@ for n in primes():
         primes_arr.append(n)
     else:
         break
-print(primes_arr)
+
+
+# print(primes_arr)
+
+
+# 练习
+# 回数是指从左向右读和从右向左读都是一样的数，例如12321，909。请利用filter()筛选出回数：
+# 二分法
+def is_palindrome(n):
+    str_n = str(n)
+    half_len_n = len(str_n) // 2
+    if half_len_n < 1:
+        return True
+    else:
+        return str_n[:half_len_n] == str_n[::-1][:half_len_n]
+
+
+# is_palindrome = lambda n: str(n) == str(n)[::-1]
+
+
+output = filter(is_palindrome, range(1, 1000))
+print('1~1000:', list(output))
+if list(filter(is_palindrome, range(1, 200))) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44, 55, 66, 77, 88, 99, 101,
+                                                  111, 121, 131, 141, 151, 161, 171, 181, 191]:
+    print('测试成功!')
+else:
+    print('测试失败!')
